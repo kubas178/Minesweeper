@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css?family=Coda+Caption:800');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 35px auto;
+  }
+
+.board{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 600px;
+    width: 600px;
+    outline: 2px solid black;
+    flex-wrap: wrap;
+}
+
+.board .cell {
+    position: relative;
+    font-size: 25px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 40px;
+    background-color: yellowgreen;
+}
+
+.bomb-circle{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.cell:nth-child(2n){
+    background-color: rgb(133, 177, 44);
+    height: 40px;
+    width: 40px;
+}
+
+.board .cell:hover{
+    background-color: rgb(187, 226, 108);
+}
+
+
+.board .checked {
+    background-color: #d7b899;
+}
+
+.board .checked:nth-child(2n) {
+    background-color: #e5c29f;
+}
+
+.flag-animation{
+    animation: flag-anim 1s linear;
+}
+
+@keyframes flag-anim {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(400deg) scale(0.1);
+    }
+}
+
+@media (min-width: 800px) {
+    body {
+        background: url("../img/background.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: 'Roboto', sans-serif;
+    }
+  }
+  
+
+  .bombs{
+      position: absolute;
+      z-index: 20;
+      top: -6.5%;
+      left: 68%;  
+      font-weight: bold;
+      font-size: 40px;
+  }
+
+  .board .flag-img{
+    position: absolute;
+    z-index: 20;
+    top: -7.80%;
+    left: 75.5%;
+    width: 50px;
+    height: 50px;  }
+
+  .score{
+    font-weight: bold;
+    position: absolute;
+    z-index: 20;
+    top: -6.5%;
+    left: 25%;  
+    font-size: 40px;
+  }
+
+  .board .cup-img{
+    position: absolute;
+    z-index: 20;
+    top: -8%;
+    left: 37.5%;
+    width: 46px;
+    height: 46px;
+  }
+
+
+
+.font{
+    position: fixed;
+    font-size: 80px;
+    font-family: 'Coda Caption', sans-serif;
+    font-weight: 800;
+    color:white;
+    background-color: transparent;
+    text-transform: uppercase;
+    border: none;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    transform: translate(-50%, -50%) perspective(300px) scaleY(2.5) rotateX(40deg);
+    transform-style: preserve-3d;
+}
+
+h1{
+    left: 50%;
+    top: 10%;
+}
+
+.start-game{
+    left: 50%;
+    top: 30%;
+    font-size: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.start-game:hover{
+    transform: translate(-50%, -50%) perspective(300px) scaleY(2.5) rotateX(-40deg);
+}
+
+footer{
+    position: fixed;
+    bottom: 0%;
+    right: 0;
+    font-family: 'Coda Caption', sans-serif;
+    text-transform: uppercase;
+    color: rgb(125, 168, 40);
+}
+
+.win-window{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 200px;
+    background-color: #e5c29f;
+    border-radius: 3%;
+}
+
+.picture{
+    position: absolute;
+    top:35%;
+    width: 70px;
+    height: 70px;
+}
+
+.number{
+    position: absolute;
+    text-align: center;
+    top:75%;
+    width: 80px;
+    height: 40px;
+    background-color: #fff;
+    font-size: 25px;
+    line-height: 40px;
+    border: 2px solid black;
+    border-radius: 20%;
+}
+
+.top-bar{
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 28%;
+    background-color: #b39980;
+    text-align: center;
+    font-size: 40px;
+    line-height: 56px;
+    font-weight: bold;
+}
+
+.cup-img-final{
+    left:25%;
+}
+
+.watch-img-final{
+    right: 25%;
+}
+
+.final-score{
+    left:24%;
+}
+
+.final-time{
+    right:24%;
+}
